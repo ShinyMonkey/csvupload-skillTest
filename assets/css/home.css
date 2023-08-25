@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.mian-container{
+    width: 35%;
+    margin: auto;
+    /* height: ; */
+}
+
+form{
+    margin-top: 30px;
+}
+
+.add{
+    background-color: red;
+}
+
+table{
+    width: 100%;
+    /* max-width: 600px; */
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+td a{
+    text-decoration: none;
+}

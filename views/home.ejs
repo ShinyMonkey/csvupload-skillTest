@@ -1,0 +1,28 @@
+
+<div class="mian-container">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" placeholder="Choose a Csv folder" accept=".csv"  required>
+        <button>Upload</button>
+    </form>
+</div>
+
+<div >
+    <%if(files.length>0){%>
+    <table>
+        <tr>
+            <td>
+                Files
+            </td>
+           
+        </tr>
+        <%for(file of files){%>
+            <tr>
+                <td><a href="/view/<%=file.name%>"><%=file.name%></a> <button><a href="/remove/<%=file.name%>">Remove</a></button></td>
+                
+            </tr>
+            <%}%>
+        
+    </table>
+    <%}%>
+</div>
+

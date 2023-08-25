@@ -1,0 +1,72 @@
+<div>
+    <form action="">
+        <input type="text" placeholder="Search"  id="input">
+        <button type="submit" id="search">Find</button>
+    </form>
+</div>
+
+
+<!-- display the seleted column into a tabular formate -->
+<div id="columnDisplay">
+    <label for="columnSelect">Select a Column:</label>
+    <select id="columnSelect"></select>
+    <div id="selectedColumnData">
+        <h3>Selected Column Data</h3>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Row</th>
+                    <th>Selected Column</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- dynamically filled using javascript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div>
+    <!-- <table class="table-bordered">
+        <tr>
+            <%for(head of headers){%>
+            <td><%=head%></td>
+            <%}%>
+        </tr>
+        <%for(row of data){%>
+            <tr>
+                <%for(head of headers){%>
+                    <td>
+                        <%=row[head]%>
+                    </td>
+                <%}%>
+            </tr>
+        <%}%>
+    </table> -->
+    <table class="table-bordered" id="table">
+        <thead>
+            <tr>
+                <% for (let h of headers) { %>
+                    <th><%= h %></th>
+                <% } %>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body will be populated dynamically using JavaScript -->
+        </tbody>
+    </table>
+
+    
+    <div class="pagination" id="pagination">
+        <!-- buttons for pagination using java script -->
+    </div>
+</div>
+</div>
+
+<script>
+    const data = <%- JSON.stringify(data) %>;
+    const header = <%- JSON.stringify(headers) %>;
+</script>
+<script src="/js/google-chart.js"></script>
+<script src="/js/pagination.js"></script>
+
