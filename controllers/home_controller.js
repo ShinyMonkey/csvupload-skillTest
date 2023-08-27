@@ -1,4 +1,8 @@
 const File = require('../models/file');
+
+
+
+// rendering the current page with existing files
 module.exports.home= async function(req,res){
     let files= await File.find({});
     return res.render('home',{
@@ -7,6 +11,8 @@ module.exports.home= async function(req,res){
     })
 }
 
+
+// to upload a .csv file
 module.exports.upload = async function(req,res){
     try {
         // console.log(req.file);
@@ -30,6 +36,7 @@ module.exports.upload = async function(req,res){
 }
 
 
+// delete a file from the database
 module.exports.remove= async function(req,res){
     try {
         let file= await File.findOne({name:req.params.name});
