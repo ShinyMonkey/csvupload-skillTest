@@ -1,10 +1,10 @@
 // pagination.js
 const table = document.getElementById('table');
 const pagination = document.getElementById('pagination');
-const itemsPerPage = 100; // Maximum records per page
-let currentPage = 1; // Current page counter
-
-// const data = JSON.stringify(data); // Pass data from EJS to JavaScript
+// Maximum records per page
+const itemsPerPage = 100; 
+// Current page counter
+let currentPage = 1; 
 
 function displayPage(page) {
     const start = (page - 1) * itemsPerPage;
