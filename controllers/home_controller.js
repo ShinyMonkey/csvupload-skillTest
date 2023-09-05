@@ -18,6 +18,11 @@ module.exports.upload = async function(req,res){
         // console.log(req.file);
         File.uploadFile(req,res,function(err){
             if(err){console.log("******Multer Error********",err)};
+            // backend check if the type of file is csv or not 
+            if (req.fileType !== 'csv') {
+                console.log('Please upload a valid CSV file.');
+                return res.redirect('back');
+            }
             if(req.file){
                 const name = req.file.originalname.split('.').slice(0, -1).join('.');
                 const filepath= req.file.path;
