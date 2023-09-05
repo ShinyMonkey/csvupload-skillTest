@@ -21,18 +21,14 @@ function init() {
         // Clear existing table rows
         dataTable.innerHTML = '';
 
-        data.forEach((row, rowIndex) => {
+        data.forEach((row) => {
             const rowElement = document.createElement('tr');
             const cellIndex = header[selectedColumnIndex];
-
-            const cellIndexElement = document.createElement('td');
-            cellIndexElement.textContent = rowIndex + 1;
-            rowElement.appendChild(cellIndexElement);
-
+        
             const cellValueElement = document.createElement('td');
             cellValueElement.textContent = row[cellIndex];
             rowElement.appendChild(cellValueElement);
-
+        
             dataTable.appendChild(rowElement);
         });
     });
